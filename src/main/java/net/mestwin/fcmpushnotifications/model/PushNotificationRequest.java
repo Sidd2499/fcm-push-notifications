@@ -1,11 +1,14 @@
 package net.mestwin.fcmpushnotifications.model;
 
+import java.util.Map;
+
 public class PushNotificationRequest {
 
     private String title;
     private String message;
     private String topic;
     private String token;
+    private Map<String, String> data;
 
     public PushNotificationRequest() {
     }
@@ -14,6 +17,14 @@ public class PushNotificationRequest {
         this.title = title;
         this.message = messageBody;
         this.topic = topicName;
+    }
+
+    public Map<String, String> getData() {
+        return data;
+    }
+
+    public void setData(Map<String, String> data) {
+        this.data = data;
     }
 
     public String getTitle() {

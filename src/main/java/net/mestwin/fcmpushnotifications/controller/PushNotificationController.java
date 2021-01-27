@@ -34,6 +34,7 @@ public class PushNotificationController {
     @PostMapping("/notification/data")
     public ResponseEntity sendDataNotification(@RequestBody PushNotificationRequest request) {
         pushNotificationService.sendPushNotification(request);
+        System.out.println(request.getData());
         return new ResponseEntity<>(new PushNotificationResponse(HttpStatus.OK.value(), "Notification has been sent."), HttpStatus.OK);
     }
 
